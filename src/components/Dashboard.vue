@@ -40,9 +40,9 @@ export default {
                         <p class="font-[500] text-[#e0e7ff] text-[14px]">A simple overview of your products, inventory
                             value, and items that needs restocking.</p>
                     </div>
-                    <div class="h-[89.6px] w-[176px] rounded-[16px] bg-[#ffffff1a] border border-[#ffffff33] px-4 py-4">
-                        <p class="text-[14px] text-[#e0e7ff]">Inventory value</p>
-                        <p class="text-[24px] font-[700] text-white">${{ totalPrice }}</p>
+                    <div class="h-[89.6px] w-[176px] rounded-[16px] bg-[#ffffff1a] border border-[#ffffff33] px-4 py-4 animate-pulse">
+                        <p class="text-[14px] text-[#e0e7ff] animate-none">Inventory value</p>
+                        <p class="text-[24px] font-[700] text-white animate-none">${{ totalPrice }}</p>
                     </div>
                 </div>
 

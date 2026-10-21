@@ -6,6 +6,7 @@
   import Inventory from './components/Inventory.vue'
   import Transactions from './components/Transactions.vue';
   import Login from './components/Login.vue';
+  import Footer from './components/Footer.vue';
 
   export default {
     components: {
@@ -13,7 +14,8 @@
       Dashboard,
       Sidebar,
       Transactions,
-      Inventory
+      Inventory,
+      Footer
     },
     data() {
       return {
@@ -78,6 +80,7 @@
   <template>
     <Login v-if="currentPage === 'Login'" @loginS="navi" />
     <Sidebar v-if="currentPage === 'Dashboard' || currentPage === 'Inventory' || currentPage === 'Transactions'" @goTo="navi" @open="to" @page="navi" @prices="price" @quantities="quantity" @units="length"
+    <Sidebar @goTo="navi" @open="to" @page="navi" @prices="price" @quantities="quantity" @units="length"
       :sidebarPage="currentPage" />
     <Dashboard v-if="currentPage === 'Dashboard'" :myInventory=inventory :totalPrice=priceNum :totalQuantity=quantityNum
       :totalUnit="Units" />
