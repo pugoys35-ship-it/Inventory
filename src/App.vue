@@ -5,10 +5,12 @@
   import Sidebar from './components/Sidebar.vue'
   import Inventory from './components/Inventory.vue'
   import Transactions from './components/Transactions.vue';
+  import Login from './components/Login.vue';
   import Footer from './components/Footer.vue';
 
   export default {
     components: {
+      Login,
       Dashboard,
       Sidebar,
       Transactions,
@@ -17,7 +19,7 @@
     },
     data() {
       return {
-        currentPage: 'Dashboard',
+        currentPage: 'Login',
         inventory: [],
         transactions: [],
         realtrans: [],
@@ -76,6 +78,8 @@
 </script>
 
   <template>
+    <Login v-if="currentPage === 'Login'" @loginS="navi" />
+    <Sidebar v-if="currentPage === 'Dashboard' || currentPage === 'Inventory' || currentPage === 'Transactions'" @goTo="navi" @open="to" @page="navi" @prices="price" @quantities="quantity" @units="length"
     <Sidebar @goTo="navi" @open="to" @page="navi" @prices="price" @quantities="quantity" @units="length"
       :sidebarPage="currentPage" />
     <Dashboard v-if="currentPage === 'Dashboard'" :myInventory=inventory :totalPrice=priceNum :totalQuantity=quantityNum
@@ -84,5 +88,7 @@
     <Inventory v-if="currentPage === 'Inventory'" :myInventory=inventory @minus="minusan" @minusQ="minusanQ"
       @minusTran="minustranprice" @minusTranQ="minustranquan" @addTotrans="pushTotrans" @goTran="addtoTran"
       @rName="username" @gotranSec="navi" />
-    <Footer />
+    <!-- <div class="z-9999 w-full h-screen flex items-center justify-center">
+      <p>{{ realtrans }} {{ userRname }} </p>
+    </div> -->
   </template>
