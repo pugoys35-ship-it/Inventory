@@ -99,7 +99,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="w-[217.2px] h-[124px] bg-[#0f172a] rounded-xl px-5 py-4">
+            <div class="w-[217.2px] h-[124px] bg-[#0f172a] rounded-xl px-5 py-4 animate-pulse">
                 <p class="font-[600] text-white">Keep stock in check</p>
                 <p class="text-[14px] text-[#cbd5e1]">Track your products, <br> quantities, and stocks, <br> in
                     one place</p>

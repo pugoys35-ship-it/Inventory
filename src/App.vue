@@ -79,9 +79,8 @@
 
   <template>
     <Login v-if="currentPage === 'Login'" @loginS="navi" />
-    <Sidebar v-if="currentPage === 'Dashboard' || currentPage === 'Inventory' || currentPage === 'Transactions'" @goTo="navi" @open="to" @page="navi" @prices="price" @quantities="quantity" @units="length"
-    <Sidebar @goTo="navi" @open="to" @page="navi" @prices="price" @quantities="quantity" @units="length"
-      :sidebarPage="currentPage" />
+    <Sidebar v-if="currentPage === 'Dashboard' || currentPage === 'Inventory' || currentPage === 'Transactions'" @goTo="navi" @open="to" @page="navi" @prices="price" @quantities="quantity" @units="length" />
+
     <Dashboard v-if="currentPage === 'Dashboard'" :myInventory=inventory :totalPrice=priceNum :totalQuantity=quantityNum
       :totalUnit="Units" />
     <Transactions v-if="currentPage === 'Transactions'" :user="userRname" :tranArray="realtrans" :myt="realtrans" />
